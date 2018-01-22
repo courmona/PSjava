@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Date;
@@ -36,15 +38,19 @@ public class NetDrawClient extends JComponent {
             public void actionPerformed(ActionEvent e) {   
                 try{
                     String message = inputText.getText();
-                    System.out.println("mess: "+message);
+                    /*System.out.println("mess: "+message);
+                     */
+                     socket = new Socket("192.168.1.40", 1515);
+                     bwriter = new BufferedWriter (new OutputStreamWriter(socket.getOutputStream()));
                     //msgTextArea.append("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
-                    out.println("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
-                    out.flush();
-                    System.out.println("breader= "+breader.readLine());
-                    //bwriter.write("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
-                    //bwriter.newLine();
-                    //bwriter.flush();
+                    //out.println("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
+                    //out.flush();
+                    //System.out.println("breader= "+breader.readLine());
+                    bwriter.write("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
+                    bwriter.newLine();
+                    bwriter.flush();
                     inputText.setText("");
+                   
                 }
                 catch(Exception ie){
                     System.out.println(ie.getMessage());

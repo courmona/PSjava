@@ -17,10 +17,11 @@ public class Reception implements Runnable {
 		
 		while(true){
 	        try {
-	        	
 			message = in.readLine();
 			System.out.println(message);
-                        NetDrawClient.msgTextArea.append("\n"+message);
+            NetDrawClient.msgTextArea.append("\n"+message);
+            
+            
 			
 		    } catch (IOException e) {
 				System.out.println("Fin de connexion");

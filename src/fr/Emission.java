@@ -10,7 +10,7 @@ public class Emission implements Runnable {
 	private PrintWriter out;
 	private String message = null;
 	private Scanner sc = null;
-        public static String log = "MEDION";
+    public static String log = "MSI";
 	
 	public Emission(PrintWriter out) {
 		this.out = out;
@@ -25,7 +25,7 @@ public class Emission implements Runnable {
 			    System.out.println("Votre message :");
 				message = sc.nextLine();
 				out.println("["+NetDrawClient.horodatage()+"]"+" < "+log+" > : "+message+"\n");
-                                NetDrawClient.msgTextArea.append("["+NetDrawClient.horodatage()+"]"+" < "+log+" > : "+message+"\n");
+                NetDrawClient.msgTextArea.append("["+NetDrawClient.horodatage()+"]"+" < "+log+" > : "+message+"\n");
 			    out.flush();
 			  }
 	}
