@@ -26,7 +26,7 @@ public class Main {
 
                         System.out.println("Demande de connexion");
                         socket = new Socket(adresse,5555);
-                        System.out.println("La Connexion etablie avec "+adresse+", authentification :"); // Si le message s'affiche c'est que je suis connecté
+                        System.out.println("LaConnexion etablie avec "+adresse+", authentification :"); // Si le message s'affiche c'est que je suis connecté
 
                         t1 = new Thread(new Authentification(socket));
                         t1.start();
