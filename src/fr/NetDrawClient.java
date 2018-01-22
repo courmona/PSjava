@@ -36,8 +36,11 @@ public class NetDrawClient extends JComponent {
             public void actionPerformed(ActionEvent e) {   
                 try{
                     String message = inputText.getText();
+                    System.out.println("mess: "+message);
                     //msgTextArea.append("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
                     out.println("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
+                    out.flush();
+                    System.out.println("breader= "+breader.readLine());
                     //bwriter.write("["+horodatage()+"]"+" < "+Emission.log+" > : "+message+"\n");
                     //bwriter.newLine();
                     //bwriter.flush();
