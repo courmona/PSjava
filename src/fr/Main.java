@@ -6,7 +6,7 @@ public class Main {
  public static ServerSocket ss = null;
  public static Thread t,t1;
  public static Socket socket = null;
- private static String adresse = "192.168.1.55";
+ private static String adresse = "192.168.1.40";
 
  
 	public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class Main {
 
                         System.out.println("Demande de connexion");
                         socket = new Socket(adresse,5555);
-                        System.out.println("Connexion établie avec "+adresse+", authentification :"); // Si le message s'affiche c'est que je suis connecté
+                        System.out.println("La Connexion etablie avec "+adresse+", authentification :"); // Si le message s'affiche c'est que je suis connecté
 
                         t1 = new Thread(new Authentification(socket));
                         t1.start();
